@@ -1,2 +1,27 @@
-ini list html loh
-<h2>Ini list html loh iahao</h2>
+<div class="container">
+	<div class="row">
+		<div class="col-md-8 col-md-offset-2">
+			<div class="panel panel-default">
+				<div class="panel-body">
+					<h2>Daftar Alumni Tercatat</h2>
+					<p>
+						Berikut ini daftar alumni yang sudah tercatat. Untuk <b>menjaga privasi</b>, kami tidak memberikan informasi pribadi secara langsung. Jika anda membutuhkan informasi pribadi seperti no hp, golongan darah dan alamat rumah, silahkan hubungi kami. </p>
+					<table class="table">
+						<thead>
+							<tr>
+								<th>Nama Lengkap</th>
+								<th>Angkatan</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr ng-repeat="alumni in alumnus">
+								<td>{{alumni.nama_lengkap}}</td>
+								<td>{{alumni.angkatan}}</td>
+							</tr>
+						</tbody>
+					</table>				
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
