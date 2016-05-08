@@ -1,4 +1,10 @@
-var App = angular.module('App',['ui.router','restangular']);
+var underscore = angular.module('underscore',[]);
+
+underscore.factory('_',['$window',function($window){
+	return $window._;
+}]);
+
+var App = angular.module('App',['ui.router','restangular','underscore']);
 
 App.config(function($stateProvider,$urlRouterProvider,RestangularProvider){
 	$urlRouterProvider.otherwise('/home');
@@ -55,9 +61,27 @@ App.controller('daftarController',function($scope, $state, Restangular){
 	}
 });
 
-App.controller('listController',function($scope,$state,Restangular){
+App.controller('listController',function($scope,$state,Restangular,_){
 	$scope.alumnus = Restangular.all('alumni').getList().$object;
 	Restangular.all('alumni').getList().then(function(alumnus){
-		$scope.alumnus = _.sortBy(alumnus,angkatan);
+		console.log(alumnus);
+		$scope.alumnus = alumnus.sort(function(a,b){
+			if(a.angkatan == b.angkatan){
+				if(a.nama_lengkap.toLowerCase() < b.nama_lengkap.toLowerCase()){
+					return -1;
+				}else if(a.nama_lengkap.toLowerCase() > b.nama_lengkap.toLowerCase()){
+					return 1;
+				}else{
+					return 0;
+				}
+			}else{
+				if(a.angkatan < b.angkatan){
+					return -1;
+				}else{
+					return 1;
+				}
+			}
+		});
+		//$scope.alumnus = _.sortBy(alumnus,angkatan);
 	});
 });
