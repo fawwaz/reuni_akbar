@@ -26,14 +26,16 @@
 									<input id="textinput1" name="textinput" placeholder="Nama Lengkap" class="form-control input-md" type="text" ng-model="alumni.nama_lengkap">
 								</div>
 							</div>
+							
 
-							<div class="form-group">
+							<!-- <div class="form-group">
 								<label class="col-md-3 col-md-offset-1 control-label" for="textinput">Nama Panggilan</label>  
 								<div class="col-md-7">
 									<input id="textinput2" name="textinput" placeholder="Nama Panggilan" class="form-control input-md" type="text" ng-model="alumni.nama_panggilan">
 								</div>
-							</div>
+							</div> -->
 
+							<!-- 
 							<div class="form-group">
 								<label class="col-md-3 col-md-offset-1 control-label" for="textinput">Tanggal Lahir</label>  
 								<div class="col-md-7">
@@ -41,6 +43,7 @@
 									<span class="help-block">Format : DD/MM/YYYY, contoh : 17/08/1945</span>
 								</div>
 							</div>
+							 -->
 
 							<div class="form-group">
 								<label class="col-md-3 col-md-offset-1 control-label" for="textinput">Angkatan</label>  
@@ -57,20 +60,22 @@
 									<span class="help-block">Isi dengan kode awalan negara tanpa spasi, misal indonesia = +62 contoh: +628571234567</span>  
 								</div>
 							</div>
+							
 
+							<!-- 
 							<div class="form-group">
 								<label class="col-md-3 col-md-offset-1 control-label" for="textinput">No Hp Cadangan</label>  
 								<div class="col-md-7">
 									<input id="textinput6" name="textinput" placeholder="No Hp Cadangan" class="form-control input-md" type="text" ng-model="alumni.hp_cadangan">
 									<span class="help-block">Isi dengan nomor hape cadangan/tablet jika punya, sesuaikan dengan format diatas (gunakan kode awalan negara), jika tidak punya isi dengan '-'</span>  
 								</div>
-							</div>
+							</div> -->
 
 							<div class="form-group">
 								<label class="col-md-3 col-md-offset-1 control-label" for="textinput">Email Utama</label>  
 								<div class="col-md-7">
 									<input id="textinput7" name="textinput" placeholder="Email" class="form-control input-md" type="text" ng-model="alumni.email">
-									<span class="help-block">Email pribadi, bukan email universitas / tempat bekerja</span>  
+									<span class="help-block">Email yang aktif diguanakn</span>  
 								</div>
 							</div>
 
@@ -94,7 +99,7 @@
 								<label class="col-md-3 col-md-offset-1 control-label" for="textinput">id line</label>  
 								<div class="col-md-7">
 									<input id="textinput9" name="textinput" placeholder="line messengger" class="form-control input-md" type="text" ng-model="alumni.id_line">
-									<span class="help-block">isi dengan id line messengger jika memiliki</span>  
+									<span class="help-block">isi dengan id line messengger jika memiliki, contoh: iqbal.hariadi </span>  
 								</div>
 							</div>
 
@@ -106,27 +111,30 @@
 								</div>
 							</div>
 
-							<div class="form-group">
+							<!-- <div class="form-group">
 								<label class="col-md-3 col-md-offset-1 control-label" for="textinput">id skype</label>  
 								<div class="col-md-7">
 									<input id="textinput10" name="textinput" placeholder="Skype" class="form-control input-md" type="text" ng-model="alumni.id_skype">
 									<span class="help-block">Digunakan untuk komunikasi video conference, isi jika memiliki</span>  
 								</div>
-							</div>
+							</div> -->
 
-							<div class="form-group">
+							<!-- <div class="form-group">
 								<label class="col-md-3 col-md-offset-1 control-label" for="textinput">Punya Telegram ?</label>  
 								<div class="col-md-7">
 									<input id="textinput10" name="textinput" placeholder="facebook" class="form-control input-md" type="text" ng-model="alumni.id_telegram">
 									<span class="help-block">Tulis "Ya" Jika memiliki telegram, "Tidak" jika tidak punya</span>  
 								</div>
-							</div>
+							</div> -->
 
 							<div class="form-group">
 								<label class="col-md-3 col-md-offset-1 control-label" for="textinput">Kegiatan Saat Ini</label>  
 								<div class="col-md-7">
-									<input id="textinput11" name="textinput" placeholder="profesi" class="form-control input-md" type="text" ng-model="alumni.profesi">
-									<span class="help-block">Tulis 'Mahasiswa' jika masih kuliah atau dengan nama jabatan jika sudah bekerja contoh: Programmer</span>  
+									<select name="profesi" ng-model="alumni.profesi">
+										<option value="Kerja">Kerja</option>
+										<option value="Kuliah">Kuliah</option>
+									</select>
+									<!-- <span class="help-block">Tulis 'Mahasiswa' jika masih kuliah atau dengan nama jabatan jika sudah bekerja contoh: Programmer</span>   -->
 								</div>
 							</div>
 
@@ -142,7 +150,7 @@
 								<label class="col-md-3 col-md-offset-1 control-label" for="textinput">Jurusan</label>  
 								<div class="col-md-7">
 									<input id="textinput12" name="textinput" placeholder="Jurusan" class="form-control input-md" type="text" ng-model="alumni.jurusan">
-									<span class="help-block">Isi jika masih kuliah</span>  
+									<span class="help-block">Isi dengan tahun masuk kuliah.</span>  
 								</div>
 							</div>
 
@@ -154,7 +162,7 @@
 								</div>
 							</div>
 
-							<div class="form-group">
+							<!-- <div class="form-group">
 								<label class="col-md-3 col-md-offset-1 control-label" for="textarea">Pengalaman Lainya</label>
 								<div class="col-md-7">                     
 									<textarea ng-model="alumni.pengalaman" class="form-control" id="textarea2" name="textarea"></textarea>
@@ -167,7 +175,7 @@
 										2013 Magang di Semen Gresik<br>
 									</span>
 								</div>
-							</div>
+							</div> -->
 
 							<!-- Textarea -->
 							<div class="form-group">
@@ -185,8 +193,9 @@
 									<span class="help-block">Gunakan awalan kode negara dan daerah (jakarta = +6221) contoh: +6222 1234567</span>  
 								</div>
 							</div>
+							
 
-							<div class="form-group">
+							<!-- <div class="form-group">
 								<label class="col-md-3 col-md-offset-1 control-label" for="textinput">Golongan Darah</label>  
 								<div class="col-md-7">
 									<input id="textinput14" name="textinput" placeholder="Golongan Darah" class="form-control input-md" type="text" ng-model="alumni.golongan_darah">
@@ -205,21 +214,20 @@
 										Patah Tulang <br>
 									</span>
 								</div>
-							</div>
+							</div> -->
 
 							
 							<h2>Bagian 2 : Saran tentang Acara</h2>
 							<hr>
 							<div class="form-group">
-								<label class="col-md-3 col-md-offset-1 control-label" for="textarea">Saran Waktu Acara (bisa)</label>
+								<label class="col-md-3 col-md-offset-1 control-label" for="textarea">Saran Waktu Pelaksanaan reuni akbar (bisa)</label>
 								<div class="col-md-7">                     
-									<textarea ng-model="alumni.saran_waktu_bisa" class="form-control" id="textarea4" name="textarea">Tulis Saran waktu yang diusulkan, Format bebas selama jelas contoh: antara awal bulan agustus - akhir desember</textarea>
+									<textarea ng-model="alumni.saran_waktu_bisa" class="form-control" id="textarea4" name="textarea"></textarea>
 									<span class="help-block">
-										Tulis tanggal-tanggal yang diusulkan dan dianggap bisa mengikuti <br>
-										format: Tanggal &lt; spasi &gt; Bulan &lt; Enter &gt; <br>
-										contoh <br>
-										April - Oktober <br>
-										Selama Weekend <br>
+										Silahkan pilih beberapa opsi waktu berikut, bisa tulis lebih dari satu <br>
+										Juni 2016 <br>
+										Agustus 2016 <br>
+										Desember 2016 <br>
 									</span>
 								</div>
 							</div>
@@ -229,12 +237,11 @@
 								<div class="col-md-7">                     
 									<textarea ng-model="alumni.saran_waktu_tak_bisa" class="form-control" id="textarea5" name="textarea"></textarea>
 									<span class="help-block">
-										Tulis tanggal-tanggal yang diusulkan untuk <b>dihindari</b>, lengkapi dengan alasan, tanpa alasan dianggap tidak valid <br>
-										format: Tanggal &lt; spasi &gt; Bulan &lt; spasi &gt; Alasan &lt; Enter &gt; <br>
-										contoh: <br>
-										21 Maret - 29 Mei Ada Ekskursi Jurusan <br>
-										13 April Wisuda <br>
-										16 Mei - 20 Juli Ospek Jurusan <br>
+										Tulis waktu yang dihindari karena ada kegiatan lain <br>
+										Silahkan pilih beberapa opsi waktu berikut, bisa tulis lebih dari satu <br>
+										Juni 2016 <br>
+										Agustus 2016 <br>
+										Desember 2016 <br>
 									</span>
 								</div>
 							</div>
