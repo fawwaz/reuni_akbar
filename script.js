@@ -29,6 +29,9 @@ App.config(function($stateProvider,$urlRouterProvider,RestangularProvider){
 		}).state('kontak',{
 			url:'/kontak',
 			templateUrl:'page/kontak.html'
+		}).state('question',{
+			url:'/pertanyaan',
+			templateUrl:'page/question.html'
 		});
 
 
@@ -53,10 +56,13 @@ App.config(function($stateProvider,$urlRouterProvider,RestangularProvider){
 
 App.controller('daftarController',function($scope, $state, Restangular){
 	$scope.message = "hai ";
+	$scope.sending_to_server = false;
 
 	$scope.save = function(){
+		$scope.sending_to_server = true;
 		Restangular.all('alumni').post($scope.alumni).then(function(alumni){
 			$state.go('terimakasih');
+			$scope.sending_to_server = false;
 		});
 	}
 });
