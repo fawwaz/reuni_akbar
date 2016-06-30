@@ -57,13 +57,33 @@ App.config(function($stateProvider,$urlRouterProvider,RestangularProvider){
 App.controller('daftarController',function($scope, $state, Restangular){
 	$scope.message = "hai ";
 	$scope.sending_to_server = false;
-
+	$scope.alumni = {};
+	$scope.emptydetected = false;
 	$scope.save = function(){
-		$scope.sending_to_server = true;
-		Restangular.all('alumni').post($scope.alumni).then(function(alumni){
-			$state.go('terimakasih');
-			$scope.sending_to_server = false;
-		});
+		if($scope.checkEmpty()){
+			$scope.emptydetected = true;
+			console.log("error detected");
+		}else{
+			console.log("not error detected");
+			$scope.emptydetected = false;
+			$scope.sending_to_server = true;
+			Restangular.all('alumni').post($scope.alumni).then(function(alumni){
+				$state.go('terimakasih');
+				$scope.sending_to_server = false;
+			});
+		}
+	}
+
+	$scope.checkEmpty = function(){
+		if(($scope.alumni.nama_lengkap == undefined) || ($scope.alumni.angkatan == undefined) || ($scope.alumni.hp_utama == undefined) || ($scope.alumni.email == undefined) || ($scope.alumni.alamat_kosan == undefined) || ($scope.alumni.telpon_kosan == undefined) || ($scope.alumni.id_line == undefined) || ($scope.alumni.id_facebook == undefined) || ($scope.alumni.profesi == undefined) || ($scope.alumni.institusi == undefined) || ($scope.alumni.jurusan == undefined) || ($scope.alumni.tahun_masuk == undefined) || ($scope.alumni.alamat_rumah == undefined) || ($scope.alumni.telpon_rumah == undefined) ){
+			return true;
+		}else{
+			if(($scope.alumni.nama_lengkap == '') || ($scope.alumni.angkatan == '') || ($scope.alumni.hp_utama == '') || ($scope.alumni.email == '') || ($scope.alumni.alamat_kosan == '') || ($scope.alumni.telpon_kosan == '') || ($scope.alumni.id_line == '') || ($scope.alumni.id_facebook == '') || ($scope.alumni.profesi == '') || ($scope.alumni.institusi == '') || ($scope.alumni.jurusan == '') || ($scope.alumni.tahun_masuk == '') || ($scope.alumni.alamat_rumah == '') || ($scope.alumni.telpon_rumah == '') ){
+				return true;
+			}else{
+				return false;
+			}
+		}
 	}
 });
 

@@ -14,7 +14,7 @@
 							<!-- Form Name -->
 							<legend>Daftar keanggotaan Alumni</legend>
 							<p>
-								Kami menghargai <b>setiap privasi anda</b>. Seluruh informasi pribadi anda <b>tidak akan disebarkan kepada pihak lain</b>. Seluruh informasi yang diberikan membantu kami menyusun database alumni yang baik.
+								Kami menghargai <b>setiap privasi anda</b>. Seluruh informasi pribadi anda <b>tidak akan disebarkan kepada pihak lain</b>. Seluruh informasi yang diberikan membantu kami menyusun database alumni yang baik. Data dengan tanda * wajib diisi
 							</p>
 
 							<div ng-show="sending_to_server">
@@ -22,13 +22,14 @@
 									<p><b>Mengirim data ke server ... </b></p>
 								</div>
 							</div>
+
 							
 							<div ng-hide="sending_to_server">
 								<h2>Bagian 1 : Informasi Pribadi</h2>
 								<hr>
 								<!-- Text input-->
 								<div class="form-group">
-									<label class="col-md-3 col-md-offset-1 control-label" for="textinput">Nama Lengkap</label>  
+									<label class="col-md-3 col-md-offset-1 control-label" for="textinput">Nama Lengkap*</label>  
 									<div class="col-md-7">
 										<input id="textinput1" name="textinput" placeholder="Nama Lengkap" class="form-control input-md" type="text" ng-model="alumni.nama_lengkap">
 									</div>
@@ -36,7 +37,7 @@
 								
 
 								<!-- <div class="form-group">
-									<label class="col-md-3 col-md-offset-1 control-label" for="textinput">Nama Panggilan</label>  
+									<label class="col-md-3 col-md-offset-1 control-label" for="textinput">Nama Panggilan*</label>  
 									<div class="col-md-7">
 										<input id="textinput2" name="textinput" placeholder="Nama Panggilan" class="form-control input-md" type="text" ng-model="alumni.nama_panggilan">
 									</div>
@@ -44,7 +45,7 @@
 
 								<!-- 
 								<div class="form-group">
-									<label class="col-md-3 col-md-offset-1 control-label" for="textinput">Tanggal Lahir</label>  
+									<label class="col-md-3 col-md-offset-1 control-label" for="textinput">Tanggal Lahir*</label>  
 									<div class="col-md-7">
 										<input id="textinput3" name="textinput" placeholder="Format : DD/MM/YYYY" class="form-control input-md" type="text" ng-model="alumni.tanggal_lahir">
 										<span class="help-block">Format : DD/MM/YYYY, contoh : 17/08/1945</span>
@@ -53,7 +54,7 @@
 								 -->
 
 								<div class="form-group">
-									<label class="col-md-3 col-md-offset-1 control-label" for="textinput">Angkatan</label>  
+									<label class="col-md-3 col-md-offset-1 control-label" for="textinput">Angkatan*</label>  
 									<div class="col-md-7">
 										<input id="textinput4" name="textinput" placeholder="Angkatan" class="form-control input-md" type="text" ng-model="alumni.angkatan">
 										<span class="help-block">Isi dengan angka, contoh: 1</span>  
@@ -61,7 +62,7 @@
 								</div>
 
 								<div class="form-group">
-									<label class="col-md-3 col-md-offset-1 control-label" for="textinput">No Hp Utama</label>  
+									<label class="col-md-3 col-md-offset-1 control-label" for="textinput">No Hp Utama*</label>  
 									<div class="col-md-7">
 										<input id="textinput5" name="textinput" placeholder="No Hp Utama" class="form-control input-md" type="text" ng-model="alumni.hp_utama">
 										<span class="help-block">Isi dengan kode awalan negara tanpa spasi, misal indonesia = +62 contoh: +628571234567</span>  
@@ -71,7 +72,7 @@
 
 								<!-- 
 								<div class="form-group">
-									<label class="col-md-3 col-md-offset-1 control-label" for="textinput">No Hp Cadangan</label>  
+									<label class="col-md-3 col-md-offset-1 control-label" for="textinput">No Hp Cadangan*</label>  
 									<div class="col-md-7">
 										<input id="textinput6" name="textinput" placeholder="No Hp Cadangan" class="form-control input-md" type="text" ng-model="alumni.hp_cadangan">
 										<span class="help-block">Isi dengan nomor hape cadangan/tablet jika punya, sesuaikan dengan format diatas (gunakan kode awalan negara), jika tidak punya isi dengan '-'</span>  
@@ -79,7 +80,7 @@
 								</div> -->
 
 								<div class="form-group">
-									<label class="col-md-3 col-md-offset-1 control-label" for="textinput">Email Utama</label>  
+									<label class="col-md-3 col-md-offset-1 control-label" for="textinput">Email Utama*</label>  
 									<div class="col-md-7">
 										<input id="textinput7" name="textinput" placeholder="Email" class="form-control input-md" type="text" ng-model="alumni.email">
 										<span class="help-block">Email yang aktif diguanakn</span>  
@@ -87,7 +88,7 @@
 								</div>
 
 								<div class="form-group">
-									<label class="col-md-3 col-md-offset-1 control-label" for="textarea">Alamat Tempat Tinggal (Kosan)</label>
+									<label class="col-md-3 col-md-offset-1 control-label" for="textarea">Alamat Tempat Tinggal (Kosan*)</label>
 									<div class="col-md-7">                     
 										<textarea ng-model="alumni.alamat_kosan"class="form-control" id="textarea1" name="textarea"></textarea>
 										<span class="help-block">Digunakan untuk mengirim pos. Lengkapi dengan kota/kabupaten dan negara. Contoh: Jl Pelesiran No 17, Kode Pos: 40225, Bandung, Indonesia</span>
@@ -95,7 +96,7 @@
 								</div>
 
 								<div class="form-group">
-									<label class="col-md-3 col-md-offset-1 control-label" for="textinput">No Telpon Kosan</label>  
+									<label class="col-md-3 col-md-offset-1 control-label" for="textinput">No Telpon Kosan*</label>  
 									<div class="col-md-7">
 										<input id="textinput8" name="textinput" placeholder="Telpon Kosan" class="form-control input-md" type="text" ng-model="alumni.telpon_kosan">
 										<span class="help-block">Bukan HP, jika tidak ada nomor telpon bapak/ibu kosan. Gunakan awalan kode negara dan daerah (jakarta = +6221) contoh: +6222 1234567 </span>  
@@ -103,7 +104,7 @@
 								</div>
 								
 								<div class="form-group">
-									<label class="col-md-3 col-md-offset-1 control-label" for="textinput">id line</label>  
+									<label class="col-md-3 col-md-offset-1 control-label" for="textinput">id line*</label>  
 									<div class="col-md-7">
 										<input id="textinput9" name="textinput" placeholder="line messengger" class="form-control input-md" type="text" ng-model="alumni.id_line">
 										<span class="help-block">isi dengan id line messengger jika memiliki, contoh: iqbal.hariadi </span>  
@@ -111,7 +112,7 @@
 								</div>
 
 								<div class="form-group">
-									<label class="col-md-3 col-md-offset-1 control-label" for="textinput">id facebook</label>  
+									<label class="col-md-3 col-md-offset-1 control-label" for="textinput">id facebook*</label>  
 									<div class="col-md-7">
 										<input id="textinput10" name="textinput" placeholder="facebook" class="form-control input-md" type="text" ng-model="alumni.id_facebook">
 										<span class="help-block">Digunakan untuk dimasukan ke grup alumni khusus, silahkan tulis lengkap Url facebook contoh: https://www.facebook.com/fawwazmuhammad</span>  
@@ -119,7 +120,7 @@
 								</div>
 
 								<!-- <div class="form-group">
-									<label class="col-md-3 col-md-offset-1 control-label" for="textinput">id skype</label>  
+									<label class="col-md-3 col-md-offset-1 control-label" for="textinput">id skype*</label>  
 									<div class="col-md-7">
 										<input id="textinput10" name="textinput" placeholder="Skype" class="form-control input-md" type="text" ng-model="alumni.id_skype">
 										<span class="help-block">Digunakan untuk komunikasi video conference, isi jika memiliki</span>  
@@ -127,7 +128,7 @@
 								</div> -->
 
 								<!-- <div class="form-group">
-									<label class="col-md-3 col-md-offset-1 control-label" for="textinput">Punya Telegram ?</label>  
+									<label class="col-md-3 col-md-offset-1 control-label" for="textinput">Punya Telegram *?</label>  
 									<div class="col-md-7">
 										<input id="textinput10" name="textinput" placeholder="facebook" class="form-control input-md" type="text" ng-model="alumni.id_telegram">
 										<span class="help-block">Tulis "Ya" Jika memiliki telegram, "Tidak" jika tidak punya</span>  
@@ -135,7 +136,7 @@
 								</div> -->
 
 								<div class="form-group">
-									<label class="col-md-3 col-md-offset-1 control-label" for="textinput">Kegiatan Saat Ini</label>  
+									<label class="col-md-3 col-md-offset-1 control-label" for="textinput">Kegiatan Saat Ini*</label>  
 									<div class="col-md-7">
 										<select name="profesi" ng-model="alumni.profesi">
 											<option value="Kerja">Kerja</option>
@@ -146,7 +147,7 @@
 								</div>
 
 								<div class="form-group">
-									<label class="col-md-3 col-md-offset-1 control-label" for="textinput">Insititusi Saat Ini</label>  
+									<label class="col-md-3 col-md-offset-1 control-label" for="textinput">Insititusi Saat Ini*</label>  
 									<div class="col-md-7">
 										<input id="textinput11" name="textinput" placeholder="Institusi" class="form-control input-md" type="text" ng-model="alumni.institusi">
 										<span class="help-block">Tulis nama universitas tanpa disingkat jika masih kuliah atau nama perusahaan jika sudah bekerja</span>  
@@ -154,7 +155,7 @@
 								</div>
 
 								<div class="form-group">
-									<label class="col-md-3 col-md-offset-1 control-label" for="textinput">Jurusan</label>  
+									<label class="col-md-3 col-md-offset-1 control-label" for="textinput">Jurusan*</label>  
 									<div class="col-md-7">
 										<input id="textinput12" name="textinput" placeholder="Jurusan" class="form-control input-md" type="text" ng-model="alumni.jurusan">
 										<span class="help-block">Isi dengan tahun masuk kuliah.</span>  
@@ -162,7 +163,7 @@
 								</div>
 
 								<div class="form-group">
-									<label class="col-md-3 col-md-offset-1 control-label" for="textinput">Tahun Masuk Kuliah</label>  
+									<label class="col-md-3 col-md-offset-1 control-label" for="textinput">Tahun Masuk Kuliah*</label>  
 									<div class="col-md-7">
 										<input id="textinput12" name="textinput" placeholder="Th. Masuk kuliah" class="form-control input-md" type="text" ng-model="alumni.tahun_masuk">
 										<span class="help-block">Isi jika masih kuliah format: YYYY , misal : 2010</span>  
@@ -170,7 +171,7 @@
 								</div>
 
 								<!-- <div class="form-group">
-									<label class="col-md-3 col-md-offset-1 control-label" for="textarea">Pengalaman Lainya</label>
+									<label class="col-md-3 col-md-offset-1 control-label" for="textarea">Pengalaman Lainya*</label>
 									<div class="col-md-7">                     
 										<textarea ng-model="alumni.pengalaman" class="form-control" id="textarea2" name="textarea"></textarea>
 										<span class="help-block">Jika pernah bekerja part-time atau pernah membuka usaha atau kegiatan sampingan selain akademik <br>
@@ -186,7 +187,7 @@
 
 								<!-- Textarea -->
 								<div class="form-group">
-									<label class="col-md-3 col-md-offset-1 control-label" for="textarea">Alamat Darurat (Rumah/Orang Tua)</label>
+									<label class="col-md-3 col-md-offset-1 control-label" for="textarea">Alamat Darurat (Rumah/Orang Tua)*</label>
 									<div class="col-md-7">                     
 										<textarea ng-model="alumni.alamat_rumah" class="form-control" id="textarea3" name="textarea"></textarea>
 										<span class="help-block">Isi dengan lengkap beserta kota/kabupaten dan negara</span>
@@ -194,7 +195,7 @@
 								</div>
 
 								<div class="form-group">
-									<label class="col-md-3 col-md-offset-1 control-label" for="textinput">No Telpon Darurat (Rumah/Orang tua)</label>  
+									<label class="col-md-3 col-md-offset-1 control-label" for="textinput">No Telpon Darurat (Rumah/Orang tua)*</label>  
 									<div class="col-md-7">
 										<input id="textinput13" name="textinput" placeholder="placeholder" class="form-control input-md" type="text" ng-model="alumni.telpon_rumah">
 										<span class="help-block">Gunakan awalan kode negara dan daerah (jakarta = +6221) contoh: +6222 1234567</span>  
@@ -273,6 +274,12 @@
 									</div>
 								</div>
 								
+								<div ng-show="emptydetected">
+									<div class="alert alert-danger">
+										<p><b>Masih ada data yang wajib diisi tapi kosong periksa lagi, seluruh data dengan tanda * wajib diisi ... </b></p>
+									</div>
+								</div>
+
 								<div class="form-group">
 									<label class="col-md-3 col-md-offset-1 control-label" for="singlebutton"></label>
 									<div class="col-md-7">
